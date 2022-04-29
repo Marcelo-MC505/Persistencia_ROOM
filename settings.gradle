@@ -1,0 +1,2 @@
+rootProject.name = "PersistenciaROOM"
+include ':app'

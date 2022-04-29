@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listaFragment">
+
+    <fragment
+        android:id="@+id/listaFragment"
+        android:name="ni.edu.uca.persistenciaroom.fragments.lista.ListaFragment"
+        android:label="Lista"
+        tools:layout="@layout/fragment_lista" >
+        <action
+            android:id="@+id/Nuevo_Usuario"
+            app:destination="@id/nuevoUsuarioFragment" />
+        <action
+            android:id="@+id/listaActualizar"
+            app:destination="@id/actualizarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nuevoUsuarioFragment"
+        android:name="ni.edu.uca.persistenciaroom.fragments.agregar.NuevoUsuarioFragment"
+        android:label="Nuevo Usuario"
+        tools:layout="@layout/fragment_nuevo_usuario" >
+        <action
+            android:id="@+id/ir_Lista"
+            app:destination="@id/listaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actualizarFragment"
+        android:name="ni.edu.uca.persistenciaroom.fragments.actualizar.ActualizarFragment"
+        android:label="Actualizar" >
+        <action
+            android:id="@+id/actualizarLista"
+            app:destination="@id/listaFragment" />
+        <argument
+            android:name="currentUsuario"
+            app:argType="ni.edu.uca.persistenciaroom.bd.entidades.UsuariosEntity" />
+    </fragment>
+</navigation>
